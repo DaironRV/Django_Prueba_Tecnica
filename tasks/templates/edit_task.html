@@ -1,0 +1,24 @@
+{% load static %}
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Tarea</title>
+    <link rel="stylesheet" href={% static 'styles.css' %}>
+    {% tailwind_css %}
+</head>
+<body>
+    <h1>Editar Tarea</h1>
+    <form action="{% url 'edit_task' task.id %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Writea title">
+        <textarea name="payment"  placeholder="Write a payment" ></textarea>
+        <input name="date" type="date" placeholder="Enter the payment date">
+        <button class="bg-red-600"> save </button>
+        <textarea name="budget"  placeholder="What is your net budget?" ></textarea>
+    </form>
+</body>
+</html>
