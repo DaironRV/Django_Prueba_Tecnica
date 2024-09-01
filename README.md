@@ -1,5 +1,23 @@
 ﻿# Desafio de CRUD
 
+
+# Hola reclutador/a
+
+##### es un gusto poderte presentar mi proyecto hecho con mucho cariño y esfuerzo, espero te guste. 
+
+
+### Diseño web
+###### A continuación te  comparto el Figama con el diseño completo y los recursos que he utilizado.
+
+######Diseño hecho en [Figma](https://www.figma.com/design/Knm3UsUub82eVhL4hvEEWJ/Untitled?node-id=0-1&t=DBJhaboQLF05nIUH-1)
+
+![](https://github.com/DaironRV/Django_Prueba_Tecnica/blob/main/Figma.png)
+
+>Espero te guste
+
+
+
+
 ## Instalacion
 
 1. Clona el repositorio en tu maquina local
