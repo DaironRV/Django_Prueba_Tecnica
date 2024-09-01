@@ -9,7 +9,7 @@
 ### Diseño web
 ###### A continuación te  comparto el Figama con el diseño completo y los recursos que he utilizado.
 
-######Diseño hecho en [Figma](https://www.figma.com/design/Knm3UsUub82eVhL4hvEEWJ/Untitled?node-id=0-1&t=DBJhaboQLF05nIUH-1)
+Diseño hecho en [Figma](https://www.figma.com/design/Knm3UsUub82eVhL4hvEEWJ/Untitled?node-id=0-1&t=DBJhaboQLF05nIUH-1)
 
 ![](https://github.com/DaironRV/Django_Prueba_Tecnica/blob/main/Figma.png)
 
