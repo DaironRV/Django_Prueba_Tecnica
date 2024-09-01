@@ -1,11 +1,11 @@
 ﻿# Desafio de CRUD
 
 
-# Hola reclutador/a
+### Hola reclutador/a
 
 ##### es un gusto poderte presentar mi proyecto hecho con mucho cariño y esfuerzo, espero te guste. 
 
-##Funcionalidad en el despliegue
+#Funcionalidad en el despliegue
 ###### Te adjunto captuars de mi aplicacion web.
 ![](https://github.com/DaironRV/Django_Prueba_Tecnica/blob/main/pagina%20Django%20prueba%20.png)
 
