@@ -11,14 +11,24 @@
     {% tailwind_css %}
 </head>
 <body>
-    <h1>Editar Tarea</h1>
-    <form action="{% url 'edit_task' task.id %}" method="POST">
-        {% csrf_token %}
-        <input type="text" name="title" placeholder="Writea title">
-        <textarea name="payment"  placeholder="Write a payment" ></textarea>
-        <input name="date" type="date" placeholder="Enter the payment date">
-        <button class="bg-red-600"> save </button>
-        <textarea name="budget"  placeholder="What is your net budget?" ></textarea>
-    </form>
+
+    <main class="flex justify-center color-font-container my-10 mx-96 rounded-3xl">
+        <section class='grid p-20'>
+          <div class="flex justify-center mb-10">
+            <h1 class="text-3xl">Editar Tarea</h1>
+          </div>
+          <div class="grid">
+            <form action="{% url 'edit_task' task.id %}" method="POST">
+              {% csrf_token %}
+              <input type="text" name="title" class="block w-full rounded-2xl bg-input mb-4" placeholder="Write a title">
+              <input name="payment" class="block w-full rounded-2xl bg-input mb-4" placeholder="Write a payment">
+              <input name="budget" class="block w-full rounded-2xl bg-input mb-4" placeholder="What is your net budget?">
+              <input name="date" type="date" class="block w-full rounded-2xl bg-input mb-4" placeholder="Enter the payment date">
+              <button class="button-green rounded-3xl mx-20 py-2 px-10 text-orange-200">Save</button>
+            </form>
+          </div>
+        </section>
+      </main>
+      
 </body>
 </html>

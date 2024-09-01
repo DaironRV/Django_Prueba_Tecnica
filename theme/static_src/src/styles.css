@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    background-color: #F2D7B6;
+}
+
+.color-font-container{
+    background-color: #F27244;
+}
+.button-green{
+    background-color: #005A64;
+}
+
+.bg-input{
+    background-color: #F2D7B6;
+    color: #FB7146;
+    border: none;
+}
+
+.button-red{
+    background-color: #A10000;
+}
+
+.color-font{
+    background: #F27244;
+    border: none;
+}
+
+input::placeholder {
+    color: #FB7146;
+}
+textarea::placeholder {
+    color: #FB7146;
+}
+
+.bg-tetx{
+    background-color: #013A40;
+}

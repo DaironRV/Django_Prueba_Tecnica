@@ -10,39 +10,92 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     {% tailwind_css %}
 </head>
+
+
 <body>
-    <h1>Tasks</h1>
+    <header class="flex justify-center my-5">
+        <h1 class="text-3xl font-bold">Budget</h1>
+    </header>
 
-    <form action="{% url 'create_task' %}" method="POST">
-        {% csrf_token %}
-        <input type="text" name="title" placeholder="Write a title">
-        <textarea name="payment" placeholder="Write a payment"></textarea>
-        <input name="date" type="date" placeholder="Enter the payment date">
-        <button class="bg-red-600">Save</button>
-        <textarea name="budget" placeholder="What is your net budget?"></textarea>
-    </form>
+    <main class="flex justify-center color-font-container my-10 mx-20 rounded-3xl">
+        <section class="container m-10">
 
-    <form action="{% url 'create_task' %}" method="POST">
-        {% csrf_token %}
-    </form>
+            <form action="{% url 'create_task' %}" method="POST" class="grid grid-cols-4 gap-10 p-10">
+                {% csrf_token %}
+                
+                    <div class="grid gap-20">
+                        <input type="text" name="title" placeholder="Write a title" class="rounded-2xl bg-input placeholder-opacity-75">
+
+                        <input type="text" name="budget" placeholder="What is your net budget?" class="rounded-2xl bg-input placeholder-opacity-75"></input>
+                    </div>
+
+                    <div class=" grid gap-20">
+                        <input type="text" name="payment" placeholder="Write a payment" class="rounded-2xl bg-input placeholder-opacity-75"></input>   
+                    
+                        <input name="date" type="date" placeholder="Enter the payment date" class="rounded-2xl bg-input">
+                    </div>
+
+                     <div class=" flex flex-col justify-between">
+                        <div class="flex-grow"></div>
+                        <button class="button-green rounded-3xl mx-20 py-2 px-10 text-orange-200">Save</button>
+                    </div>
+                        
+            </form>
+
+        </section>
+    </main>
+
 
     {% for task in tasks %}
-    <div>
-        <h1>{{ task.title }}</h1>
-        <p>{{ task.payment }}</p>
-        <input type="date" name="date" value="{{ task.date|date:'Y-m-d' }}">
-        <form action="{% url 'delete_task' task.id %}" method="POST">
-            {% csrf_token %}
-            <button>Delete</button>
-        </form>
-        <a href="{% url 'edit_task' task.id %}">
-            <button>Editar</button>
-        </a>
-        <p>{{ task.budget }}</p>
-        <p>{{ task.budget_edit }}</p>
-    </div>
+    <section class="flex justify-center color-font-container my-10 mx-20 rounded-3xl">
+
+        <section class="container m-10">
+
+            <div class="grid grid-cols-2 gap-10 p-10">
+
+                <div class=" grid items-center">
+                    <h1 class="text-3xl ">{{ task.title }}</h1>
+                    <p class="text-5xl my-10">{{ task.payment }}</p>
+                    <input class="color-font  " type="date" name="date" value="{{ task.date|date:'Y-m-d' }}" disabled>
+                </div>
+
+                <section class="grid grid-cols-2">
+                    <div class=" grid items-center">
+
+                        <a href="{% url 'edit_task' task.id %}" class="my-10">
+                            <button class="button-green rounded-full mx-20 py-7 px-10 text-orange-200">Editar</button>
+                        </a>
+
+                        <form action="{% url 'delete_task' task.id %}" method="POST" class="my-10">
+                            {% csrf_token %}
+                            <button class=" button-red rounded-full xl mx-20 py-7 px-10 text-orange-200">Delete</button>
+                        </form>
+                
+                    </div>
+
+                    <div class="grid gap-y-4  items-center">
+                        
+                        <div class="flex justify-center bg-tetx rounded-3xl">
+                            <p class="p-10 text-2xl text-orange-200 ">{{ task.budget }}</p>
+                        </div>
+                        
+                        <div class="flex justify-center bg-tetx rounded-3xl">
+                            <p class="p-10 text-2xl text-orange-200">{{ task.budget_edit }}</p>
+                        </div>
+                    </div>
+                </section>
+                
+
+            </div>
+        </section>
+
+    </section>
+
+
+
     {% empty %}
-    <h1>No hay tareas</h1>
+    <h1 class="text-2xl font-bold flex justify-center my-5">There are no accounts</h1>
     {% endfor %}
+
 </body>
 </html>

@@ -35,20 +35,24 @@ def create_tasks(request):
 
 
 def edit_task(request, task_id):
-
     task = get_object_or_404(Task, id=task_id)
     if request.method == 'POST':
-        task.title = request.POST.get('title')
-        task.payment = request.POST.get('payment')
-        task.date = request.POST.get('date') or None
+        budget_edit = number_float(request.POST.get('budget_edit', ''))
+        budget = number_float(request.POST.get('budget', ''))
+        payment = number_float(request.POST.get('payment', ''))
+        title = request.POST.get('title')
+        date = request.POST.get('date') or None  
 
-        # Intenta convertir el valor de payment a float y maneja cualquier excepción
-        try:
-            task.payment = float(task.payment)
-        except (ValueError, TypeError):
-            task.payment = 0.0  # Valor predeterminado si la conversión falla
+        budget_edit = budget - payment
 
+        # Actualiza los campos de la instancia existente
+        task.title = title
+        task.payment = payment
+        task.date = date
+        task.budget = budget
+        task.budget_edit = budget_edit
         task.save()
+        
         return redirect('/tasks/')
     return render(request, 'edit_task.html', {'task': task})
 
