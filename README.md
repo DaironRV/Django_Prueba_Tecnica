@@ -68,3 +68,5 @@ $ pip install -r requirements.txt
 2. Accede a la documentación de la API en tu navegador:
 
 http://localhost:8000/admin
+
+
