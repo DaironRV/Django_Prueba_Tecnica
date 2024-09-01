@@ -12,7 +12,7 @@
 - Coloca un titulo descriptivo.
 - Llena los datos de las transacciones hechas. (Tanto el presupuesto que tienes como el dinero que quiere gastar)
 - Asegurate de colocar la fecha.
-- Simplemente preciona el boton :  Save
+- Simplemente preciona el boton :Save
 - Ya tienes la transaccion registarda
 
 ------------
