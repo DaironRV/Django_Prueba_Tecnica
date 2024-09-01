@@ -101,26 +101,26 @@ WSGI_APPLICATION = 'Django_Costos.wsgi.application'
 
 
 # este DATABASES si lo quieres ejecutar en local tienes que descomentalo, y conectarlo a la base de tatos que tengas en local
-# DATABASES = {
-#     # 'default': {
-#     #     "ENGINE": "django.db.backends.postgresql", #La base de datos debe de ser en este acso Postgresql
-#     #     "NAME": "tasksdb", #conectamos con postgres por el nombre de la base de datos.
-#     #     "USER": "postgres",
-#     #     "PASSWORD": "1074809190",
-#     #     "HOST": "localhost",
-#     #     "PORT": "5432",
-#     # }   
-# }
+DATABASES = {
+    'default': {
+        "ENGINE": "django.db.backends.postgresql", #La base de datos debe de ser en este acso Postgresql
+      "NAME": "tasksdb", #conectamos con postgres por el nombre de la base de datos.
+        "USER": "postgres",
+       "PASSWORD": "1074809190",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }   
+}
 
 
 # esto es para el despliege en produccion.
-DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Replace this value with your local database's connection string.
+#         default='postgresql://postgres:postgres@localhost:5432/mysite',
+#         conn_max_age=600
+#     )
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
