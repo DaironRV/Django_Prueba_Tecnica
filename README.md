@@ -5,6 +5,20 @@
 
 ##### es un gusto poderte presentar mi proyecto hecho con mucho cariño y esfuerzo, espero te guste. 
 
+### Funcionalidad en el despliegue
+###### Te adjunto captuars de mi aplicacion web.
+![](https://github.com/DaironRV/Django_Prueba_Tecnica/blob/main/pagina%20Django%20prueba%20.png)
+
+- Coloca un titulo descriptivo.
+- Llena los datos de las transacciones hechas. (Tanto el presupuesto que tienes como el dinero que quiere gastar)
+- Asegurate de colocar la fecha.
+- Simplemente preciona el boton :  Save
+- Ya tienes la transaccion registarda
+
+
+
+
+
 
 ### Diseño web
 ###### A continuación te  comparto el Figama con el diseño completo y los recursos que he utilizado.
