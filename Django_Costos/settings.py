@@ -10,24 +10,30 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^z3j54y0nw^9zqo$rccjy2%5o95*jzgi*_zcnry38p*z&5b_*1'
+SECRET_KEY = os.environ.get('SECRET_KEY', default='Your secret')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'RENDER'not in os.environ
 
 ALLOWED_HOSTS = []
 
-
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 # Application definition
 
 INSTALLED_APPS = [
@@ -61,6 +67,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
+    # este es un extra para el despliegue
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
+
     
     "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
@@ -89,17 +99,28 @@ WSGI_APPLICATION = 'Django_Costos.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "tasksdb",
-        "USER": "postgres",
-        "PASSWORD": "1074809190",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
-}
 
+# este DATABASES si lo quieres ejecutar en local tienes que descomentalo, y conectarlo a la base de tatos que tengas en local
+# DATABASES = {
+#     # 'default': {
+#     #     "ENGINE": "django.db.backends.postgresql", #La base de datos debe de ser en este acso Postgresql
+#     #     "NAME": "tasksdb", #conectamos con postgres por el nombre de la base de datos.
+#     #     "USER": "postgres",
+#     #     "PASSWORD": "1074809190",
+#     #     "HOST": "localhost",
+#     #     "PORT": "5432",
+#     # }   
+# }
+
+
+# esto es para el despliege en produccion.
+DATABASES = {
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        conn_max_age=600
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -136,6 +157,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# lo que esat haciendo es decir si no esta especificamente eso va a aplicar el if, o mejor dicho si el debuj no es en true va a crear un archivo llamado staticfiles
+if not DEBUG:
+    # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
+    # and renames the files with unique names for each version to support long-term caching
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
