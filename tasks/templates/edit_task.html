@@ -7,28 +7,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Tarea</title>
-    <link rel="stylesheet" href={% static 'styles.css' %}>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
     {% tailwind_css %}
 </head>
 <body>
 
-    <main class="flex justify-center color-font-container my-10 mx-96 rounded-3xl">
-        <section class='grid p-20'>
-          <div class="flex justify-center mb-10">
-            <h1 class="text-3xl">Edit Payment </h1>
-          </div>
-          <div class="grid">
-            <form action="{% url 'edit_task' task.id %}" method="POST">
-              {% csrf_token %}
-              <input type="text" name="title" class="block w-full rounded-2xl bg-input mb-4" placeholder="Write a title">
-              <input name="payment" class="block w-full rounded-2xl bg-input mb-4" placeholder="Write a payment">
-              <input name="budget" class="block w-full rounded-2xl bg-input mb-4" placeholder="What is your net budget?">
-              <input name="date" type="date" class="block w-full rounded-2xl bg-input mb-4" placeholder="Enter the payment date">
-              <button class="button-green rounded-3xl mx-20 py-2 px-10 text-orange-200">Save</button>
-            </form>
-          </div>
+    <main class="flex justify-center my-10 mx-4 sm:mx-10 md:mx-20 rounded-3xl">
+        <section class='grid rounded-3xl color-font-container p-4 sm:p-10'>
+            <div class="flex justify-center mb-4 sm:mb-10">
+                <h1 class="text-3xl">Edit Payment</h1>
+            </div>
+            <div class="grid">
+                <form action="{% url 'edit_task' task.id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="title" class="block w-full rounded-2xl bg-input mb-4" placeholder="Write a title">
+                    <input name="payment" class="block w-full rounded-2xl bg-input mb-4" placeholder="Write a payment">
+                    <input name="budget" class="block w-full rounded-2xl bg-input mb-4" placeholder="What is your net budget?">
+                    <input name="date" type="date" class="block w-full rounded-2xl bg-input mb-4" placeholder="Enter the payment date">
+                    <button class="button-green rounded-3xl mx-4 sm:mx-20 py-2 sm:py-6 px-4 sm:px-10 text-orange-200">Save</button>
+                </form>
+            </div>
         </section>
-      </main>
+    </main>
       
 </body>
 </html>
