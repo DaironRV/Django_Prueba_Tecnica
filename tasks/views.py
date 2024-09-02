@@ -4,19 +4,19 @@ from datetime import datetime
 
 # Create your views here.
 
+# Commit: List all tasks
 def list_tasks(request):
     tasks = Task.objects.all()
     return render(request,'list_tasks.html', {"tasks" : tasks})
 
-
+# Commit: Convert value to float with default
 def number_float (value, default=0.0):
     try:
         return float(value)
     except (ValueError, TypeError):
         return default
 
-
-
+# Commit: Create a new task
 def create_tasks(request):
 
     if request.method == 'POST':
@@ -32,8 +32,7 @@ def create_tasks(request):
         task.save()
         return redirect('/tasks/')
 
-
-
+# Commit: Edit an existing task
 def edit_task(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     if request.method == 'POST':
@@ -56,7 +55,7 @@ def edit_task(request, task_id):
         return redirect('/tasks/')
     return render(request, 'edit_task.html', {'task': task})
 
-
+# Commit: Delete a task
 def delete_task(reques, task_id):
     delete_task =Task.objects.get(id=task_id)
     delete_task.delete()
