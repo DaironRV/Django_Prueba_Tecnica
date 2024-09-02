@@ -7,7 +7,7 @@
 
 #Funcionalidad en el despliegue
 ###### Te adjunto captuars de mi aplicacion web.
-![](https://github.com/DaironRV/Django_Prueba_Tecnica/blob/main/pagina%20Django%20prueba%20.png)
+![](https://github.com/DaironRV/Django_Prueba_Tecnica/blob/main/Page%20init.png)
 
 - Coloca un titulo descriptivo.
 - Llena los datos de las transacciones hechas. (Tanto el presupuesto que tienes como el dinero que quiere gastar)
@@ -17,7 +17,7 @@
 
 ------------
 
-![](https://github.com/DaironRV/Django_Prueba_Tecnica/blob/main/Edit%20payment.png)
+![](https://github.com/DaironRV/Django_Prueba_Tecnica/blob/main/Page%20edit.png)
 
 - Coloca un titulo descriptivo.
 - Llena los datos de las transacciones hechas. (Tanto el presupuesto que tienes como el dinero que quiere gastar)
