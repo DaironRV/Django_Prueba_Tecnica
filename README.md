@@ -83,6 +83,19 @@ A continuación, te comparto el diseño completo y los recursos que he utilizado
         pip install -r requirements.txt
         ```
 
+## Antes de
+
+1.verifica que tengas **PogreSQL** intalado (Si quieres usar esa base de dato).
+2.intala nuevamente Django en el entorno virtual.
+    - **Windows**:
+        ```bash
+        py -m pip install Django
+        ```
+    - **Linux/Mac**:
+        ```bash
+        python -m pip install Django
+        ```
+
 ## Uso
 
 1. Inicia la aplicación (recuerda siempre activar el entorno virtual):
