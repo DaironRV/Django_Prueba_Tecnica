@@ -87,7 +87,6 @@ A continuación, te comparto el diseño completo y los recursos que he utilizado
 
 1.verifica que tengas **PogreSQL** intalado (Si quieres usar esa base de dato).
 2.intala nuevamente Django en el entorno virtual:
-
     - **Windows**:
         ```bash
         py -m pip install Django
