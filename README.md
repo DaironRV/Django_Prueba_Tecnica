@@ -86,7 +86,8 @@ A continuación, te comparto el diseño completo y los recursos que he utilizado
 ## Antes de
 
 1.verifica que tengas **PogreSQL** intalado (Si quieres usar esa base de dato).
-2.intala nuevamente Django en el entorno virtual.
+2.intala nuevamente Django en el entorno virtual:
+
     - **Windows**:
         ```bash
         py -m pip install Django
@@ -108,5 +109,5 @@ A continuación, te comparto el diseño completo y los recursos que he utilizado
         python3.manage.py runserver
         ```
 
-2. Accede a la documentación de la API en tu navegador:
+3. Accede a la documentación de la API en tu navegador:
     http://localhost:8000/tasks
