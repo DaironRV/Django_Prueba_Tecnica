@@ -33,6 +33,7 @@ Es un gusto poderte presentar mi proyecto hecho con mucho cariño y esfuerzo. ¡
 A continuación, te comparto el diseño completo y los recursos que he utilizado en Figma.
 
 !Diseño en Figma
+[Figma](https://www.figma.com/design/Knm3UsUub82eVhL4hvEEWJ/Untitled?node-id=0-1&t=DBJhaboQLF05nIUH-1)
 
 > ¡Espero te guste!
 
